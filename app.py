@@ -24,7 +24,7 @@ def refresh(q):
     keys=["title","author","source","date","img","content","description"]
     article={}
 
-    print(q,b,"\n\n")
+    # print(q,b,"\n\n")
     if b['totalResults']==0:
         return {}
     for i in range(20):
