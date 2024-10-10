@@ -33,7 +33,7 @@
                         {%endif%}
                         <p class="date">{{N[i]['date']}}</p>
                         {%if N[i]['img']==None and N[i]['description']!=None %}
-                        <h3>[{{N[i]['description']}}]</h3>
+                        <h3>{{N[i]['description']}}</h3>
                         {%endif%}
                     </div>
                 </article>
@@ -41,21 +41,21 @@
             </div>
         </section>
         <section class="news-section">
-            <h2>Latest News</h2>
+            <h2>Other Topics</h2>
             <div class="news-cards">
-                {% for i in N %}
+                {% for i in S %}
                 <article class="news-card" onclick="location.href=''">
-                    {%if N[i]['img']!=None%}
-                    <img src="{{N[i]['img']}}" alt="News 1">
+                    {%if S[i]['img']!=None%}
+                    <img src="{{S[i]['img']}}" alt="News 1">
                     {%endif%}
                     <div class="news-card-content">
-                        <h3>{{N[i]['title']}}</h3>
-                        {%if N[i]['author']!=None%}
-                        <p>By {{N[i]['author']}}</p>
+                        <h3>{{S[i]['title']}}</h3>
+                        {%if S[i]['author']!=None%}
+                        <p>By {{S[i]['author']}}</p>
                         {%endif%}
-                        <p class="date">{{N[i]['date']}}</p>
-                        {%if N[i]['img']==None%}
-                        <h3>[{{N[i]['discription']}}]</h3>
+                        <p class="date">{{S[i]['date']}}</p>
+                        {%if S[i]['img']==None%}
+                        <h3>{{S[i]['discription']}}</h3>
                         {%endif%}
                     </div>
                 </article>
