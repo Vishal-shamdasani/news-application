@@ -1,23 +1,23 @@
 from flask import Flask,render_template,request
 import requests
 import json
+import os 
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app=Flask(__name__,template_folder="template",static_folder="static")
 
 @app.route("/")
 def home():
-    return render_template("index.html",N=refresh("us"),S=refresh("tesla"))
+    return render_template("index.html",N=refresh("top news"),I=refresh("india"),S=refresh("tesla"))
 
 
 @app.route("/refresh")
 def refresh(q):
-        
-    header={
-        "country":f"{q}",
-        "apikey":"you api key",
-        
-    }
-    news=requests.get("https://newsapi.org/v2/top-headlines",params=header)
+    apikey=os.environ.get('api_key')
+    print(apikey)
+    news=requests.get(f"https://newsapi.org/v2/everything?q={q}&sortBy=publishedAt&apiKey={apikey}")
     b=(json.loads(news.text))
 
     values=""
@@ -44,3 +44,5 @@ def refresh(q):
 if __name__=="__main__":
     app.run(debug=True)
     pass
+
+# print(refresh("us"))

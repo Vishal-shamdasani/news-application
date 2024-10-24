@@ -41,10 +41,32 @@
             </div>
         </section>
         <section class="news-section">
-            <h2>Other Topics</h2>
+            <h2>India</h2>
+            <div class="news-cards">
+                {% for i in I %}
+                <article class="news-card" onclick="location.href=''">
+                    {%if I[i]['img']!=None%}
+                    <img src="{{I[i]['img']}}" alt="News 1">
+                    {%endif%}
+                    <div class="news-card-content">
+                        <h3>{{I[i]['title']}}</h3>
+                        {%if I[i]['author']!=None%}
+                        <p>By {{I[i]['author']}}</p>
+                        {%endif%}
+                        <p class="date">{{I[i]['date']}}</p>
+                        {%if I[i]['img']==None%}
+                        <h3>{{I[i]['discription']}}</h3>
+                        {%endif%}
+                    </div>
+                </article>
+                {%endfor%}
+            </div>
+        </section>
+        <section class="news-section">
+            <h2>Sports</h2>
             <div class="news-cards">
                 {% for i in S %}
-                <article class="news-card" onclick="location.href=''">
+                <article class="news-card" onclick="">
                     {%if S[i]['img']!=None%}
                     <img src="{{S[i]['img']}}" alt="News 1">
                     {%endif%}
@@ -54,8 +76,8 @@
                         <p>By {{S[i]['author']}}</p>
                         {%endif%}
                         <p class="date">{{S[i]['date']}}</p>
-                        {%if S[i]['img']==None%}
-                        <h3>{{S[i]['discription']}}</h3>
+                        {%if S[i]['img']==None and S[i]['description']!=None %}
+                        <h3>{{S[i]['description']}}</h3>
                         {%endif%}
                     </div>
                 </article>
