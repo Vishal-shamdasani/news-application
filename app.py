@@ -2,9 +2,6 @@ from flask import Flask,render_template,request
 import requests
 import json
 import os 
-from dotenv import load_dotenv
-
-load_dotenv()
 
 app=Flask(__name__,template_folder="template",static_folder="static")
 
@@ -42,7 +39,7 @@ def refresh(q):
     return article
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run()
     pass
 
 # print(refresh("us"))
