@@ -22,7 +22,7 @@
             <h2>Latest News</h2>
             <div class="news-cards">
                 {% for i in N %}
-                <article class="news-card" onclick="">
+                <article class="news-card" onclick="window.location.href='{{N[i]['url']}}'">
                     {%if N[i]['img']!=None%}
                     <img src="{{N[i]['img']}}" alt="News 1">
                     {%endif%}
@@ -44,7 +44,7 @@
             <h2>India</h2>
             <div class="news-cards">
                 {% for i in I %}
-                <article class="news-card" onclick="location.href=''">
+                <article class="news-card" onclick="window.location.href='{{I[i]['url']}}'">
                     {%if I[i]['img']!=None%}
                     <img src="{{I[i]['img']}}" alt="News 1">
                     {%endif%}
@@ -66,7 +66,7 @@
             <h2>Sports</h2>
             <div class="news-cards">
                 {% for i in S %}
-                <article class="news-card" onclick="">
+                <article class="news-card" onclick="window.location.href='{{S[i]['url']}}'">
                     {%if S[i]['img']!=None%}
                     <img src="{{S[i]['img']}}" alt="News 1">
                     {%endif%}
