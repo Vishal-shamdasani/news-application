@@ -16,15 +16,14 @@ def home():
 @app.route("/refresh")
 def refresh(q):
     apikey=os.environ.get('api_key')
-    print(apikey)
     news=requests.get(f"https://newsapi.org/v2/everything?q={q}&sortBy=publishedAt&apiKey={apikey}")
     b=(json.loads(news.text))
+    # print(b)
 
     values=""
     keys=["title","author","source","date","img","content","description"]
     article={}
 
-    # print(q,b,"\n\n")
     if b['totalResults']==0:
         return {}
     for i in range(20):
@@ -36,9 +35,9 @@ def refresh(q):
         article[i]["source"]=b["articles"][i]["source"]["name"]
         article[i]["date"]=b["articles"][i]["publishedAt"].split("T")[0]
         article[i]["img"]=b["articles"][i]["urlToImage"]
+        article[i]["url"]=b["articles"][i]["url"]
         article[i]["content"]=b["articles"][i]["content"]
         article[i]["description"]=b["articles"][i]["description"]
-# print(article[0])
     return article
 
 if __name__=="__main__":

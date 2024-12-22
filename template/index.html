@@ -22,19 +22,19 @@
             <h2>Latest News</h2>
             <div class="news-cards">
                 {% for i in N %}
-                <article class="news-card" onclick="">
-                    {%if N[i]['img']!=None%}
+                <article class="news-card" onclick="window.location.href='{{N[i]['url']}}'">  <!-- Add the URL of the news article in the onclick attribute -->
+                    {% if N[i]['img'] != None %}
                     <img src="{{N[i]['img']}}" alt="News 1">
-                    {%endif%}
+                    {% endif %}
                     <div class="news-card-content">
                         <h3>{{N[i]['title']}}</h3>
-                        {%if N[i]['author']!=None%}
+                        {% if N[i]['author'] != None %}
                         <p>By {{N[i]['author']}}</p>
-                        {%endif%}
+                        {% endif %}
                         <p class="date">{{N[i]['date']}}</p>
-                        {%if N[i]['img']==None and N[i]['description']!=None %}
+                        {% if N[i]['img'] == None and N[i]['description'] != None %}
                         <h3>{{N[i]['description']}}</h3>
-                        {%endif%}
+                        {% endif %}
                     </div>
                 </article>
                 {%endfor%}
@@ -44,7 +44,7 @@
             <h2>India</h2>
             <div class="news-cards">
                 {% for i in I %}
-                <article class="news-card" onclick="location.href=''">
+                <article class="news-card" onclick="window.location.href='{{I[i]['url']}}'">
                     {%if I[i]['img']!=None%}
                     <img src="{{I[i]['img']}}" alt="News 1">
                     {%endif%}
@@ -66,7 +66,7 @@
             <h2>Sports</h2>
             <div class="news-cards">
                 {% for i in S %}
-                <article class="news-card" onclick="">
+                <article class="news-card" onclick="window.location.href='{{S[i]['url']}}'">
                     {%if S[i]['img']!=None%}
                     <img src="{{S[i]['img']}}" alt="News 1">
                     {%endif%}
