@@ -7,7 +7,7 @@ app=Flask(__name__,template_folder="template",static_folder="static")
 
 @app.route("/")
 def home():
-    return render_template("index.html",N=refresh("top news"),I=refresh("india"),S=refresh("tesla"))
+    return render_template("index.html",N=refresh("top news"),I=refresh("india"),S=refresh("sports"))
 
 
 @app.route("/refresh")
