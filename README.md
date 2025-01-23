@@ -2,6 +2,10 @@
 
 This project is a Flask-based web application that displays news articles fetched from the News API. It features a dark-themed interface with horizontally scrollable news cards.
 
+## Live Demo
+
+You can access the deployed version of the project here: [News Website on Render](https://news-application-y1sn.onrender.com/)
+
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
@@ -11,7 +15,7 @@ Before you begin, ensure you have met the following requirements:
 
 ## Installing News Website
 
-To install the News Website, follow these steps:
+To install the News Website locally, follow these steps:
 
 1. Clone the repository:
    ```
@@ -36,7 +40,7 @@ To install the News Website, follow these steps:
 
 4. Install the required dependencies:
    ```
-   pip install flask requests
+   pip install -r requirements.txt
    ```
 
 ## Configuration
@@ -59,7 +63,7 @@ To configure the News API key:
 
 ## Running News Website
 
-To run News Website, follow these steps:
+To run News Website locally, follow these steps:
 
 1. Ensure you're in the project directory and your virtual environment is activated (if you're using one).
 
@@ -76,19 +80,6 @@ To run News Website, follow these steps:
 - The dark theme is implemented using custom CSS. You can modify the styles in `static/css/style.css`.
 - The horizontally scrollable news cards are implemented using CSS flexbox. You can adjust the card layout in the CSS file as well.
 
-## Contributing to News Website
-
-To contribute to News Website, follow these steps:
-
-1. Fork this repository.
-2. Create a branch: `git checkout -b <branch_name>`.
-3. Make your changes and commit them: `git commit -m '<commit_message>'`
-4. Push to the original branch: `git push origin <project_name>/<location>`
-5. Create the pull request.
-
-Alternatively, see the GitHub documentation on [creating a pull request](https://help.github.com/articles/creating-a-pull-request/).
-
 ## Contact
 
-If you want to contact me, you can reach me at `shamdasani46@gmail.com>`.
-
+If you want to contact me, you can reach me at `shamdasani46@gmail.com`.
