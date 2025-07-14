@@ -12,7 +12,7 @@ with open("new_page_firebase_api_key.json", "w") as f:
     f.write(os.getenv("new_page_firebase_api_key"))
 cred = credentials.Certificate("new_page_firebase_api_key.json")
 firebase_admin.initialize_app(cred, {
-    'databaseURL': f"{os.getenv("firebase_url")}"
+    'databaseURL': f"{os.getenv('firebase_url')}"
 })
 
 
