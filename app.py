@@ -99,4 +99,7 @@ scheduler.start()
 if __name__=="__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(update_data, 'interval', minutes=30)
+    scheduler.start()
     pass
